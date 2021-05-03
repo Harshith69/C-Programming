@@ -1,0 +1,17 @@
+/*********************************************************************************
+
+input : A  output: 65
+input : a  output: 97
+input :    output: 32   (Spac)
+/*********************************************************************************
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+     
+    char ch;
+    printf("Enter a Character\n");
+    scanf("%c", &ch);
+    printf("THe ASCII value of %c is %d", ch, (int) ch);
+    return 0;
+}

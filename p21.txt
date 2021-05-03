@@ -1,0 +1,48 @@
+4.  Number game  :: Input an element ( string, number etc) and if the input is a number 
+then accept, if the input is "done" then stop  accepting, 
+otherwise accept the next element and so on.
+Use the ele,ent "done" to stop accepting input and return the largest
+ and smallest element recieved 
+
+Sample input pattern    111 345 hello  356 678 111 999 bye 165 done
+output: the smallest is 111 the largest is 999 
+
+Hint Explore the usage of atoi function 
+/*********************************************************************************
+
+#include<stdio.h>
+int isnumber(char *str)
+{
+   int i=0,flag;
+   while(*str!='\0')
+    {
+        flag=isdigit(*(str+i));
+        if(flag)
+        return 1;
+        else return 0;
+    }
+}
+int main() {
+   char str[10]; 
+   int i, smallest=9999, largest =-9999;
+  while(1)
+  {
+   printf("enter an input -> string, number or done");
+   scanf("%s", str);
+   if(isnumber(str))
+    {
+         i=atoi(str); // "123" -> 123
+         if(i>largest)
+         largest=i; 
+         
+         if(i<smallest)
+         smallest=i;  
+     }
+  else if(!strcmp(str,"done"))
+   {
+       break;
+   }
+  else  continue;
+  }
+   printf("Max= %d \t Min =%d", largest, smallest);
+ }

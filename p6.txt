@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+	int x;
+	printf("Enter the number: \n");
+	scanf("%d", &x);
+
+	int is_prime = 1;
+	for (int i = 2; i * i <= x; i++)
+	{
+		if (x % i == 0)
+		{
+			is_prime = 0;
+			break;
+		}
+	}
+
+	if (is_prime)
+	{
+		printf("The number is prime\n");
+	}
+	else
+	{
+		printf("The number is not prime\n");
+	}
+
+	return 0;
+}

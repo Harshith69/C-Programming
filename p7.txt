@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+	int x, even[50], odd[50], even_len = 0, odd_len = 0;
+	printf("Enter the number:\n");
+	scanf("%d", &x);
+	while (x != 0)
+	{
+		if ((x % 10) % 2 == 0)
+		{
+			even[even_len] = (x % 10);
+			even_len++;
+		}
+		else
+		{
+			odd[odd_len] = (x % 10);
+			odd_len++;
+		}
+		x = x/10;
+	}
+
+	printf("The even digits are: ");
+	for (int i = 0; i < even_len; i++)
+	{
+		printf("%d ", even[i]);
+	}
+
+	printf("\nThe odd digits are: ");
+	for (int i = 0; i < odd_len; i++)
+	{
+		printf("%d ", odd[i]);
+	}
+
+	return 0;
+}

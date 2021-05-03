@@ -1,0 +1,68 @@
+4.Write a C program to  search a specified eleent in array of random elements.
+if the search  is successful then,  the program should  display the following
+1. Search is successful 
+2. the position of first occurance
+3. the position of the last occurance 
+
+Example 1
+given array  {11,22,33,33,66,55,88,11,33,11}; and key ==11
+o/p   
+Search Successfull                                                                                                  
+The first occuracne of the key is = 1                                                                               
+The last occuracne of the key is = 10    
+
+Example 2
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =33
+o/p
+Search Successfull                                                                                                  
+The first occuracne of the key is = 2                                                                               
+The last occuracne of the key is = 8     
+
+Example 3
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =88
+o/p
+Search Successfull                                                                                                 
+The first occuracne of the key is = 6                                                                              
+The last occuracne of the key is = 6    
+
+Example 4
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =99
+o/p
+Search Failure  
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int arr[]={22,33,33,66,55,88,11,33,11,55};
+    int fo=0, lo=0;
+    int key=99;
+    for(int i=0;i<10;i++)
+    {
+        if(arr[i]==key)
+        {
+            if((i>=fo) && (fo==0))
+            {
+                fo=i+1;
+            }
+            else
+            {
+                lo=i+1;
+            }
+        }
+    }
+    
+    if(fo||lo)
+    {
+        printf("Search Successfull\n");
+        printf("The first occuracne of the key is = %d\n", fo);
+        if(lo==0) // can use ternary operator as well
+        printf("The last occuracne of the key is = %d\n", fo);
+        else 
+         printf("The last occuracne of the key is = %d\n", lo);
+    }
+    else
+    printf("Search Failure\n");
+
+    return 0;
+}
