@@ -1,10 +1,11 @@
-2. Write a program that returns the max occured character in the given line of input 
+//2. Write a program that returns the max occured character in the given line of input 
    ascii for space is 32
 
 input : every example is unique
-output: every example is unique
+output: every example is unique //
 
 /*********************************************************************************
+//
 #include <stdio.h>
 #include <string.h>
 int main()
